@@ -8,21 +8,29 @@ const Main = () => {
     const [movies, setMovies] = useState([]);
 
     const getMovies = async () => {
-        const response = await fetch(`http://www.omdbapi.com/?t=${search}&apikey=405b184c`)
-        const data = await response.json();
+        const response = await fetch(`http://www.omdbapi.com/?s=${search}&apikey=405b184c`)
 
-        console.log(data);
+        if (response.ok) {
+            const data = await response.json();
+            
+            return { success: true, data }
+        } else
+        return { success: false, error: 'Noe gikk galt' }
+
     }
 
-    const handleSubmit = (evt) => {
+    const handleSubmit = async (evt) => {
         evt.preventDefault();
-        getMovies();
+
+        let data = await getMovies();
+
+        setMovies( data?.data )
     }
 
     return (
         <main>
             <Search search={search} setSearch={setSearch} handleSubmit={handleSubmit} />
-            <Movies movies={movies} />
+            <Movies movies={movies.Search} />
         </main>
     )
 }

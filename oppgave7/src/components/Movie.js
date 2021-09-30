@@ -1,6 +1,6 @@
 const Movie = ({ movie }) => {
     return (
-        <p>{movie}</p>
+        <p>{JSON.stringify(movie)}</p>
     )
 }
 

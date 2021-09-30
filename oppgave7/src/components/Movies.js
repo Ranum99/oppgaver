@@ -6,7 +6,7 @@ const Movies = ({ movies }) => {
 
     return (
         <section className="movies">
-            {movies?.map((movie) => <Movie key={movie.name} movie={movie.name} />)}
+            {movies?.map((movie) => <Movie key={movie.imdbID} movie={movie} />)}
         </section>
     )
 }
