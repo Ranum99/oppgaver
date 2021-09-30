@@ -1,6 +1,15 @@
+import './css/Movie.css';
+
 const Movie = ({ movie }) => {
     return (
-        <p>{JSON.stringify(movie)}</p>
+        <article>
+            <img alt={movie.Title} src={movie.Poster} />
+            <h2>{movie.Title}</h2>
+            <div>
+                <p>Year: {movie.Year}</p>
+                <p>imdbID: {movie.imdbID}</p>
+            </div>
+        </article>
     )
 }
 
