@@ -15,7 +15,6 @@ export const Add = () => {
         setResult( x + y )
     }
     
-
     return (
         <div>
             <p>Result is: {result}</p>
@@ -25,7 +24,7 @@ export const Add = () => {
             <label>Second number:
                 <input type="number" value={y} onChange={handleChangeY}></input>
             </label>
-            <input type="button" onClick={addNumbers}></input>
+            <button type="button" onClick={addNumbers}>Add</button>
         </div>
     )
 }
