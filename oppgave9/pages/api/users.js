@@ -2,19 +2,36 @@
 
 const users = [
   {
-    username: "John Doe",
+    name: "John Doe",
     email: "johndoe@mail.com",
     password: "123"
   },
   {
-    username: "Jane Doe",
+    name: "Jane Doe",
     email: "janedoe@mail.com",
     password: "321"
   }
 ]
 
+const newUsers = []
+
 export default function handler(req, res) {
-  //if(req.methode === "GET") {
-    res.status(200).json({ success: true, data: users })
-  //}
+  if (req.method === "POST") {
+    const data = req.body
+
+    if(!data?.name || !data?.email || !data?.password)
+      res.status(400).json({ success: false, error: "Fill in empty fields", data: data })
+    else {
+      const newUser = {
+        name: data.name,
+        email: data.email,
+        password: data.password
+      }
+
+      newUsers.push(newUser)
+      res.status(201).json({ success: true, data: newUsers })
+    }
+  } else {
+    res.status(200).json({ success: true, data: newUsers })
+  }
 }

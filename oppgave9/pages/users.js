@@ -26,7 +26,7 @@ export default function Users() {
             <h1>All users</h1>
             <ul>
                 {users?.map(user => 
-                    <li key={user.username}>{user.username}</li>
+                    <li key={user.name}>{user.name}</li>
                 )}
             </ul>
         </Layout>
