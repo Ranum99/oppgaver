@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import axios from "axios"
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Users() {
@@ -25,8 +26,12 @@ export default function Users() {
         <Layout>
             <h1>All users</h1>
             <ul>
-                {users?.map(user => 
-                    <li key={user.name}>{user.name}</li>
+                {users?.map(user =>
+                    <li key={user.id}>
+                        <Link href={"/users/" + user.id}>{user.name}</Link>
+                    </li>
+                    
+                    //<li key={user.name}>{user.name}</li>
                 )}
             </ul>
         </Layout>
