@@ -18,6 +18,7 @@ export default function Form() {
                 });
                 if(!response?.data?.data) {
                     setError("User added")
+                    setUser({name: "", email: "", password: ""})
                 } else {
                     setError(response?.data?.error)
                 }

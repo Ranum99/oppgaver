@@ -1,18 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const users = [
-  {
-    name: "John Doe",
-    email: "johndoe@mail.com",
-    password: "123"
-  },
-  {
-    name: "Jane Doe",
-    email: "janedoe@mail.com",
-    password: "321"
-  }
-]
-
 const newUsers = []
 
 export default function handler(req, res) {
