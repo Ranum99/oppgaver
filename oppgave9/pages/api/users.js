@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-const newUsers = []
+const users = []
 
 export default function handler(req, res) {
   if (req.method === "POST") {
@@ -10,25 +10,25 @@ export default function handler(req, res) {
       res.status(400).json({ success: false, error: "Fill in empty fields", data: data })
     else {
       const newUser = {
-        id: (newUsers.length + 1),
+        id: (users.length + 1),
         name: data.name,
         email: data.email,
         password: data.password
       }
 
-      newUsers.push(newUser)
-      res.status(201).json({ success: true, data: newUsers })
+      users.push(newUser)
+      res.status(201).json({ success: true, data: users })
     }
   } else {
     const data = req.body;
 
     if (data?.id) {
-      const user = newUsers.filter(user => {
+      const user = users.filter(user => {
         return user.id = data.id;
       })
       
       res.status(200).json({ success: true, data: user })
     } else 
-      res.status(200).json({ success: true, data: newUsers })
+      res.status(200).json({ success: true, data: users })
   }
 }
