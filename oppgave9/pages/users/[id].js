@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import { useRouter } from 'next/router'
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -27,6 +28,9 @@ export default function User() {
 
     return (
         <Layout>
+        <Head>
+            <title>{user.name} - {user.id}</title>
+        </Head>
             <h1>Single user</h1>
             <p><span>ID:</span> {user.id}</p>
             <p><span>Name:</span> {user.name}</p>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import Head from "next/head";
 import Layout from "./components/layout";
 
 export default function Form() {
@@ -39,6 +40,9 @@ export default function Form() {
 
     return (
         <Layout>
+            <Head>
+                <title>Sign up</title>
+            </Head>
             <h1>Sign up</h1>
             <p className="error">{error && `Message: ${error}`}</p>
             <form className="form" onSubmit={handleSubmit}>
