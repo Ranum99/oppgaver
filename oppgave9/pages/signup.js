@@ -40,15 +40,15 @@ export default function Form() {
     return (
         <Layout>
             <h1>Sign up</h1>
-            {error ?? <p>{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <label>Name
+            <p className="error">{error && `Message: ${error}`}</p>
+            <form className="form" onSubmit={handleSubmit}>
+                <label>Name:
                     <input type="text" onChange={handleChange} value={user.name} name="name" />
                 </label>
-                <label>Email
+                <label>Email:
                     <input type="email" onChange={handleChange} value={user.email} name="email" />
                 </label>
-                <label>Password
+                <label>Password:
                     <input type="password" onChange={handleChange} value={user.password} name="password" />
                 </label>
                 <button type="submit">Sign up</button>

@@ -25,7 +25,7 @@ export default function Users() {
     return (
         <Layout>
             <h1>All users</h1>
-            <ul>
+            <ul className="users">
                 {users?.map(user =>
                     <li key={user.id}>
                         <Link href={"/users/" + user.id}>{user.name}</Link>

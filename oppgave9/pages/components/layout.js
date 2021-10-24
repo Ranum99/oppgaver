@@ -2,10 +2,10 @@ import Navigation from './navigation'
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div>
       <Navigation />
-      <main className="layout">{children}</main>
-    </>
+      <main className="layoutChild">{children}</main>
+    </div>
   )
 }
 

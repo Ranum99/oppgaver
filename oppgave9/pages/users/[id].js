@@ -28,10 +28,10 @@ export default function User() {
     return (
         <Layout>
             <h1>Single user</h1>
-            <p>ID: {user.id}</p>
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>Password: {user.password}</p>
+            <p><span>ID:</span> {user.id}</p>
+            <p><span>Name:</span> {user.name}</p>
+            <p><span>Email:</span> {user.email}</p>
+            <p><span>Password:</span> {user.password}</p>
         </Layout>
     )
 }
